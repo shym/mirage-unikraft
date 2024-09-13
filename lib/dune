@@ -1,0 +1,8 @@
+(library
+ (name unikraft_os)
+ (public_name mirage-unikraft)
+ (libraries mirage-unix lwt lwt.unix)
+ (no_dynlink)
+ (foreign_stubs
+  (language c)
+  (names stubs)))
