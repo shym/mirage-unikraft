@@ -1,5 +1,3 @@
-external halt : unit -> unit = "caml_halt"
-
 (* From lwt/src/unix/lwt_main.ml *)
 let rec run t =
   (* Wakeup paused threads now. *)
@@ -37,10 +35,4 @@ let run t =
 let () =
   at_exit (fun () ->
       Lwt.abandon_wakeups ();
-      run (Mirage_runtime.run_exit_hooks ());
-      (* Explicitly call [flush_all] before halting the unikernel, since this is
-         the default [at_exit] function, and it will not have a chance to run
-         because the unikernel is shut down just after *)
-      flush_all ();
-      (* Explicitly call [halt], to avoid livelocks in idle threads *)
-      halt ())
+      run (Mirage_runtime.run_exit_hooks ()))
