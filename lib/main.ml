@@ -1,3 +1,5 @@
+external yield : unit -> unit = "caml_yield"
+
 (* From lwt/src/unix/lwt_main.ml *)
 let rec run t =
   (* Wakeup paused threads now. *)
@@ -9,6 +11,7 @@ let rec run t =
     (* Call enter hooks. *)
     Mirage_runtime.run_enter_iter_hooks ();
     (* Do the main loop call. *)
+    yield ();
     Lwt_engine.iter (Lwt.paused_count () = 0);
     (* Wakeup paused threads again. *)
     Lwt.wakeup_paused ();

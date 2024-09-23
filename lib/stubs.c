@@ -1,19 +1,19 @@
 #ifdef __Unikraft__
 
 #include <caml/callback.h>
-#include <pthread.h>
-#include <assert.h>
+#include <uk/sched.h>
 
-void *uk_caml_main(void *argv) {
-    caml_startup((char**) argv);
-    return NULL;
+void caml_yield(void) {
+  uk_sched_yield();
 }
 
 int main(int argc, char **argv) {
-    pthread_t m;
-    assert(pthread_create(&m, NULL, &uk_caml_main, argv) == 0);
-    assert(pthread_join(m, NULL) == 0);
+    caml_startup(argv);
     return 0;
 }
+
+#else
+
+void caml_yield(void) {}
 
 #endif
