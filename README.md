@@ -4,7 +4,7 @@
 
 Contributions are most welcome!
 
-- [File issues](https://github.com/shym/mirage-unikraft/issues) to report bugs or feature requests.
+- [File issues](https://github.com/mirage/mirage-unikraft/issues) to report bugs or feature requests.
 - [Contribute code or documentation](./CONTRIBUTING.md).
 
 ---

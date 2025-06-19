@@ -5,7 +5,7 @@
 (generate_opam_files true)
 
 (source
- (github shym/mirage-unikraft))
+ (github mirage/mirage-unikraft))
 
 (authors "Fabrice Buoro" "Samuel Hym")
 

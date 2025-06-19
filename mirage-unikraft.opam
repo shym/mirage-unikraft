@@ -7,8 +7,8 @@ maintainer: ["Fabrice Buoro" "Samuel Hym"]
 authors: ["Fabrice Buoro" "Samuel Hym"]
 license: "MIT"
 tags: ["org:mirage"]
-homepage: "https://github.com/shym/mirage-unikraft"
-bug-reports: "https://github.com/shym/mirage-unikraft/issues"
+homepage: "https://github.com/mirage/mirage-unikraft"
+bug-reports: "https://github.com/mirage/mirage-unikraft/issues"
 depends: [
   "ocaml"
   "dune" {>= "3.16"}
@@ -35,4 +35,4 @@ build: [
     "@doc" {with-doc}
   ]
 ]
-dev-repo: "git+https://github.com/shym/mirage-unikraft.git"
+dev-repo: "git+https://github.com/mirage/mirage-unikraft.git"
